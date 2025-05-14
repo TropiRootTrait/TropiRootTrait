@@ -319,32 +319,38 @@ s<!DOCTYPE HTML>
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="#"> Connect with us!</a></h2>
-									</div>
-  
-  <form id="contact-form">
-    <label for="name"><strong>Name:</strong></label>
-    <input type="text" name="user_name" id="name" required>
+										<h2 style="text-align: center; font-size: 28px; margin-bottom: 30px;">Connect With Us</h2>
 
-    <label for="email"><strong>Email:</strong></label>
-    <input type="email" name="user_email" id="email" required>
+  <form id="contact-form" style="width: 100%; max-width: 500px;">
+    <div style="margin-bottom: 15px;">
+      <label for="name"><strong>Name:</strong></label>
+      <input type="text" name="user_name" id="name" required style="width: 100%; padding: 10px; box-sizing: border-box;">
+    </div>
 
-    <label for="topic"><strong>Topic:</strong></label>
-    <input type="text" name="user_topic" id="topic" required>
+    <div style="margin-bottom: 15px;">
+      <label for="email"><strong>Email:</strong></label>
+      <input type="email" name="user_email" id="email" required style="width: 100%; padding: 10px; box-sizing: border-box;">
+    </div>
 
-    <label for="message"><strong>Message:</strong></label>
-    <textarea name="message" id="message" rows="6" required></textarea>
+    <div style="margin-bottom: 15px;">
+      <label for="topic"><strong>Topic:</strong></label>
+      <input type="text" name="user_topic" id="topic" required style="width: 100%; padding: 10px; box-sizing: border-box;">
+    </div>
 
-    <button type="submit" style="background-color: #007acc; color: white; padding: 10px 20px; border: none; font-size: 16px; cursor: pointer;">Send</button>
+    <div style="margin-bottom: 15px;">
+      <label for="message"><strong>Message:</strong></label>
+      <textarea name="message" id="message" rows="6" required style="width: 100%; padding: 10px; box-sizing: border-box;"></textarea>
+    </div>
+
+    <button type="submit" style="background-color: #007acc; color: white; padding: 10px 20px; font-size: 16px; border: none; cursor: pointer;">Send</button>
+    <p id="response" style="margin-top: 15px;"></p>
   </form>
-
-  <p id="response" style="margin-top: 10px;"></p>
 
   <!-- EmailJS Script -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
     (function() {
-      emailjs.init("t8X5w554kF5x41d-G"); // Replace with your actual EmailJS public key
+      emailjs.init("t8X5w554kF5x41d-G"); // Replace with your EmailJS Public Key
     })();
 
     document.getElementById('contact-form').addEventListener('submit', function(event) {
