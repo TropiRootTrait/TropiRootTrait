@@ -26,6 +26,7 @@ s<!DOCTYPE HTML>
 								<li><a href="#three">Publications</a></li>
 								<li><a href="#four">TropiRoot Media Coverage </a></li>
 								<li><a href="#five">TropiRAD </a></li>
+								<li><a href="#six">Connect with us </a></li>
 								<!--	<li><a href="#">Tempus</a></li> -->
 							<!--	<li><a href="#">Adipiscing</a></li> -->
 							</ul>
@@ -312,6 +313,56 @@ s<!DOCTYPE HTML>
 								</footer>
 							</article>
 						</section>
+
+						<!-- Post -->
+						<section id="six">	
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="#"> Connect with us!</a></h2>
+									</div>
+  
+  <form id="contact-form">
+    <label for="name"><strong>Name:</strong></label>
+    <input type="text" name="user_name" id="name" required>
+
+    <label for="email"><strong>Email:</strong></label>
+    <input type="email" name="user_email" id="email" required>
+
+    <label for="topic"><strong>Topic:</strong></label>
+    <input type="text" name="user_topic" id="topic" required>
+
+    <label for="message"><strong>Message:</strong></label>
+    <textarea name="message" id="message" rows="6" required></textarea>
+
+    <button type="submit" style="background-color: #007acc; color: white; padding: 10px 20px; border: none; font-size: 16px; cursor: pointer;">Send</button>
+  </form>
+
+  <p id="response" style="margin-top: 10px;"></p>
+
+  <!-- EmailJS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("t8X5w554kF5x41d-G"); // Replace with your actual EmailJS public key
+    })();
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      emailjs.sendForm('service_2207tul', 'template_m9rzba8', this)
+        .then(function() {
+          document.getElementById('response').innerHTML = "✅ Message sent successfully!";
+          document.getElementById('contact-form').reset();
+        }, function(error) {
+          document.getElementById('response').innerHTML = "❌ Failed to send message: " + error.text;
+        });
+    });
+  </script>
+</section>
+
+									
+									
 					
 				<!-- Footer -->
 					<section id="footer">
